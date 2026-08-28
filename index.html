@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #080b12;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .jarvis {
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 60px;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+        }
+
+        .circle {
+            width: 180px;
+            height: 180px;
+            margin: 30px auto;
+            border: 3px solid #00bfff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px #00bfff;
+        }
+
+        .circle span {
+            font-size: 50px;
+        }
+
+        p {
+            color: #9aa4b2;
+            font-size: 18px;
+        }
+
+        .chat {
+            margin-top: 30px;
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            flex: 1;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 10px;
+            background: #00bfff;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #respuesta {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #111722;
+            min-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="jarvis">
+
+    <h1>JARVIS</h1>
+
+    <div class="circle">
+        <span>◉</span>
+    </div>
+
+    <p>Tu asistente escolar personal</p>
+
+    <div class="chat">
+        <input id="pregunta" type="text" placeholder="Escribe algo para JARVIS...">
+        <button onclick="hablar()">Enviar</button>
+    </div>
+
+    <div id="respuesta">
+        Hola. Soy JARVIS. ¿En qué puedo ayudarte?
+    </div>
+
+</div>
+
+<script>
+
+function hablar() {
+
+    let pregunta = document.getElementById("pregunta").value;
+    let respuesta = document.getElementById("respuesta");
+
+    if (pregunta.trim() === "") {
+        respuesta.innerText = "Escribe una pregunta primero.";
+        return;
+    }
+
+    respuesta.innerText =
+        "He recibido tu pregunta: " + pregunta +
+        "\n\nTodavía estoy aprendiendo. Pronto podré responder usando inteligencia artificial.";
+
+}
+
+</script>
+
+</body>
+</html>
