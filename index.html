@@ -108,16 +108,13 @@
 
 <script>
 
-function hablar() {
-
-    let pregunta = document.getElementById("pregunta").value;
-    let respuesta = document.getElementById("respuesta");
-
-    if (pregunta.trim() === "") {
-        respuesta.innerText = "Escribe una pregunta primero.";
-        return;
-    }
-
+respuesta.innerHTML = `
+    <strong>Tu pregunta:</strong><br>
+    ${pregunta}
+    <br><br>
+    <strong>JARVIS:</strong><br>
+    He recibido tu pregunta. 🧠
+`;
     respuesta.innerText =
         "He recibido tu pregunta: " + pregunta +
         "\n\nTodavía estoy aprendiendo. Pronto podré responder usando inteligencia artificial.";
